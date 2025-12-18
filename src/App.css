@@ -1,23 +1,45 @@
-#root {
+/* Variables específicas para componentes */
+:root {
+  --logo-size: 6rem;
+  --logo-padding: 1.5rem;
+  --logo-glow-primary: #646cffaa;
+  --logo-glow-react: #61dafbaa;
+  --card-padding: 2rem;
+  --transition-duration: 300ms;
+}
+
+/* Layout principal */
+.app-root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
 
+/* Logo con efectos mejorados */
 .logo {
-  height: 6em;
-  padding: 1.5em;
+  height: var(--logo-size);
+  padding: var(--logo-padding);
   will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  transition: filter var(--transition-duration) ease-in-out, transform var(--transition-duration) ease-in-out;
 }
 
+.logo:hover {
+  filter: drop-shadow(0 0 2rem var(--logo-glow-primary));
+  transform: scale(1.05);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2rem var(--logo-glow-react));
+}
+
+.logo:focus-visible {
+  outline: 2px solid var(--logo-glow-primary);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Animación de rotación optimizada */
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -28,15 +50,62 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
+  .logo-animated {
     animation: logo-spin infinite 20s linear;
   }
 }
 
+/* Cards mejoradas */
 .card {
-  padding: 2em;
+  padding: var(--card-padding);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  transition: all var(--transition-duration) ease-in-out;
 }
 
+.card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Texto de documentación */
 .read-the-docs {
-  color: #888;
+  color: var(--color-text-light, #888);
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  transition: color var(--transition-duration) ease-in-out;
+}
+
+.read-the-docs:hover {
+  color: var(--color-text, #333);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .app-root {
+    padding: 1rem;
+  }
+
+  .logo {
+    height: 4rem;
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+}
+
+/* Accesibilidad - reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .logo,
+  .card,
+  .read-the-docs {
+    transition: none;
+  }
+
+  .logo-animated {
+    animation: none;
+  }
 }

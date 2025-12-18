@@ -1,0 +1,35 @@
+.contact {
+  background: var(--dark-bg);
+  color: var(--text-light);
+}
+
+.contact__title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.contact__content {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact__email {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  color: var(--accent-color);
+  text-decoration: none;
+  margin-top: 20px;
+  padding: 15px 30px;
+  border: 2px solid var(--accent-color);
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.contact__email:hover {
+  background: var(--accent-color);
+  color: var(--text-dark);
+}
