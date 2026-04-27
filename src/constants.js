@@ -1,0 +1,203 @@
+export const TRANSLATIONS = {
+  ES: {
+    nav: {
+      inicio: 'Inicio',
+      nosotros: 'Nosotros',
+      servicios: 'Servicios',
+      galeria: 'Galería',
+      contacto: 'Contacto',
+    },
+    hero: {
+      tagline: 'INDUSTRIAL TECH SOLUTIONS',
+      h1_1: 'Energía que Transforma la',
+      h1_2: 'Industria',
+      subtitle: 'Una empresa de servicios a su servicio. Proporcionamos ingeniería de precisión y mantenimiento avanzado para el sector industrial desde 1991.',
+      cta_primary: 'Explorar Servicios',
+      cta_secondary: 'Contáctanos',
+    },
+    about: {
+      label: 'SOBRE NOSOTROS',
+      title: 'Innovación y Experiencia',
+      stats: [
+        { value: '30+', label: 'Años' },
+        { value: '100%', label: 'Compromiso' },
+        { value: '24/7', label: 'Soporte' },
+      ],
+      cards: [
+        {
+          title: 'Nuestra Trayectoria',
+          description: 'Desde 1991, hemos liderado el mercado de servicios industriales, adaptándonos a las nuevas tecnologías y exigencias globales para ofrecer soluciones de vanguardia.',
+        },
+        {
+          title: 'Visión Sustentable',
+          description: 'Nos especializamos en la transición hacia energías limpias, enfocándonos en sistemas fotovoltaicos que optimizan el consumo industrial y reducen el impacto ambiental.',
+        },
+      ],
+    },
+    services: {
+      label: 'PORTAFOLIO',
+      title: 'Nuestros Servicios',
+      items: [
+        { title: 'Instalación y Puesta en Marcha', description: 'Implementación integral de sistemas industriales con protocolos de alta seguridad.', badge: 'CORE' },
+        { title: 'Mantenimiento', description: 'Planes preventivos y predictivos para asegurar la continuidad de su línea de producción.' },
+        { title: 'Reparaciones', description: 'Asistencia técnica especializada para resolución de fallas críticas en tiempo récord.' },
+        { title: 'Programación y Reparación de PLC', description: 'Optimización de procesos automatizados y diagnóstico de controladores lógicos.', badge: 'NUEVO' },
+        { title: 'Instalaciones Fotovoltaicas', description: 'Soluciones energéticas sustentables diseñadas para el alto consumo industrial.', badge: 'NUEVO' },
+      ],
+      cta_label: '¿Necesita un servicio a medida?',
+      cta_link: 'Consultar ahora',
+    },
+    gallery: {
+      label: 'EVIDENCIA',
+      title: 'Nuestra Galería',
+      alts: ['Engranajes mecánicos', 'Técnico trabajando', 'Paneles solares', 'Línea de producción'],
+    },
+    contact: {
+      label: 'CONTACTO',
+      title: 'Hablemos de Negocios',
+      info: [
+        { title: 'Ubicación', detail: 'San Justo, Buenos Aires, Argentina' },
+        { title: 'Email', detail: 'servicios@automacer.com.ar' },
+        { title: 'Horarios', detail: 'Lunes a Viernes: 08:00 - 18:00' },
+      ],
+      form: {
+        name: 'Nombre', name_ph: 'Su nombre',
+        email: 'Email', email_ph: 'email@empresa.com',
+        message: 'Mensaje', message_ph: 'Describa su requerimiento técnico...',
+        submit: 'Enviar Solicitud',
+        consent_pre: 'He leído y acepto las ',
+        consent_privacy: 'Políticas de Privacidad',
+        consent_and: ' y ',
+        consent_terms: 'Términos y Condiciones',
+        consent_error: 'Debes aceptar las políticas para continuar',
+        privacy_clause: 'Tus datos serán utilizados únicamente para responder tu consulta y gestionar el seguimiento de tu requerimiento técnico. No compartimos tu información con terceros.',
+      },
+      legal: {
+        privacy_title: 'Política de Privacidad',
+        terms_title: 'Términos y Condiciones',
+        privacy_content: [
+          { heading: 'Responsable del Tratamiento', text: 'AUTOMACER Industrial Tech Solutions, con domicilio en San Justo, Buenos Aires, Argentina.' },
+          { heading: '¿Qué datos recopilamos?', text: 'A través de nuestro formulario de contacto, recopilamos los siguientes datos personales que usted nos proporciona voluntariamente: nombre completo, dirección de correo electrónico y mensaje con la descripción de su requerimiento técnico. No recopilamos datos sensibles, financieros ni información de menores de edad.' },
+          { heading: '¿Para qué utilizamos sus datos?', text: 'Sus datos personales se utilizan exclusivamente para responder a su consulta o solicitud de servicio, realizar el seguimiento interno de su requerimiento técnico y contactarlo en caso de necesitar información adicional sobre su solicitud.' },
+          { heading: '¿Cómo protegemos sus datos?', text: 'Sus datos se almacenan de forma temporal en una base de datos privada con acceso restringido. No compartimos, vendemos ni cedemos su información personal a terceros bajo ninguna circunstancia. El acceso a los datos está limitado al personal autorizado de AUTOMACER.' },
+          { heading: '¿Cuánto tiempo conservamos sus datos?', text: 'Conservamos sus datos mientras sea necesario para gestionar su consulta. Una vez finalizado el proceso, los datos se eliminan en un plazo máximo de 12 meses.' },
+          { heading: 'Sus derechos', text: 'De acuerdo con la Ley 25.326 de Protección de Datos Personales de Argentina, usted tiene derecho a acceder a sus datos personales en nuestro poder, rectificar cualquier dato inexacto o incompleto, y solicitar la eliminación de sus datos de nuestros registros. Para ejercer cualquiera de estos derechos, puede contactarnos a: servicios@automacer.com.ar' },
+        ],
+        terms_content: [
+          { heading: 'Uso del formulario de contacto', text: 'Al utilizar el formulario de contacto de AUTOMACER, usted acepta las siguientes condiciones:' },
+          { heading: 'Uso adecuado', text: 'El formulario está destinado exclusivamente para consultas legítimas relacionadas con los servicios industriales que ofrecemos.' },
+          { heading: 'Contenido prohibido', text: 'Queda prohibido enviar mensajes que contengan publicidad no solicitada o spam, lenguaje ofensivo, difamatorio o discriminatorio, contenido malicioso, enlaces sospechosos o intentos de inyección de código.' },
+          { heading: 'Veracidad de los datos', text: 'Usted se compromete a proporcionar información veraz y actualizada.' },
+          { heading: 'Limitación de envíos', text: 'Nos reservamos el derecho de limitar la cantidad de envíos por usuario para prevenir el uso abusivo del formulario.' },
+          { heading: 'Sin obligación contractual', text: 'El envío de un formulario no constituye una relación contractual. AUTOMACER responderá las consultas según disponibilidad y relevancia.' },
+        ],
+      },
+    },
+    footer: {
+      tagline: 'Una empresa de servicios a su servicio',
+      links: ['Política de Privacidad', 'Términos de Servicio', 'Portal de Mantenimiento'],
+      copy: '© 2024 AUTOMACER INDUSTRIAL TECH SOLUTIONS. PRECISION ENGINEERED.',
+    },
+  },
+
+  EN: {
+    nav: {
+      inicio: 'Home',
+      nosotros: 'About',
+      servicios: 'Services',
+      galeria: 'Gallery',
+      contacto: 'Contact',
+    },
+    hero: {
+      tagline: 'INDUSTRIAL TECH SOLUTIONS',
+      h1_1: 'Energy that Transforms',
+      h1_2: 'Industry',
+      subtitle: 'A service company at your service. We provide precision engineering and advanced maintenance for the industrial sector since 1991.',
+      cta_primary: 'Explore Services',
+      cta_secondary: 'Contact Us',
+    },
+    about: {
+      label: 'ABOUT US',
+      title: 'Innovation & Experience',
+      stats: [
+        { value: '30+', label: 'Years' },
+        { value: '100%', label: 'Commitment' },
+        { value: '24/7', label: 'Support' },
+      ],
+      cards: [
+        {
+          title: 'Our History',
+          description: 'Since 1991, we have led the industrial services market, adapting to new technologies and global demands to deliver cutting-edge solutions.',
+        },
+        {
+          title: 'Sustainable Vision',
+          description: 'We specialize in the transition to clean energy, focusing on photovoltaic systems that optimize industrial consumption and reduce environmental impact.',
+        },
+      ],
+    },
+    services: {
+      label: 'PORTFOLIO',
+      title: 'Our Services',
+      items: [
+        { title: 'Installation & Commissioning', description: 'Comprehensive implementation of industrial systems with high-security protocols.', badge: 'CORE' },
+        { title: 'Maintenance', description: 'Preventive and predictive plans to ensure the continuity of your production line.' },
+        { title: 'Repairs', description: 'Specialized technical assistance for resolving critical failures in record time.' },
+        { title: 'PLC Programming & Repair', description: 'Optimization of automated processes and diagnosis of programmable logic controllers.', badge: 'NEW' },
+        { title: 'Photovoltaic Installations', description: 'Sustainable energy solutions designed for high industrial consumption.', badge: 'NEW' },
+      ],
+      cta_label: 'Need a custom service?',
+      cta_link: 'Inquire now',
+    },
+    gallery: {
+      label: 'EVIDENCE',
+      title: 'Our Gallery',
+      alts: ['Mechanical gears', 'Technician working', 'Solar panels', 'Production line'],
+    },
+    contact: {
+      label: 'CONTACT',
+      title: "Let's Talk Business",
+      info: [
+        { title: 'Location', detail: 'San Justo, Buenos Aires, Argentina' },
+        { title: 'Email', detail: 'servicios@automacer.com.ar' },
+        { title: 'Hours', detail: 'Monday to Friday: 08:00 - 18:00' },
+      ],
+      form: {
+        name: 'Name', name_ph: 'Your name',
+        email: 'Email', email_ph: 'email@company.com',
+        message: 'Message', message_ph: 'Describe your technical requirement...',
+        submit: 'Send Request',
+        consent_pre: 'I have read and accept the ',
+        consent_privacy: 'Privacy Policy',
+        consent_and: ' and ',
+        consent_terms: 'Terms & Conditions',
+        consent_error: 'You must accept the policies to continue',
+        privacy_clause: 'Your data will only be used to respond to your inquiry and manage the follow-up of your technical request. We do not share your information with third parties.',
+      },
+      legal: {
+        privacy_title: 'Privacy Policy',
+        terms_title: 'Terms & Conditions',
+        privacy_content: [
+          { heading: 'Data Controller', text: 'AUTOMACER Industrial Tech Solutions, located in San Justo, Buenos Aires, Argentina.' },
+          { heading: 'What data do we collect?', text: 'Through our contact form, we collect the following personal data that you voluntarily provide: full name, email address, and message describing your technical requirement. We do not collect sensitive, financial, or minors\' data.' },
+          { heading: 'How do we use your data?', text: 'Your personal data is used exclusively to respond to your inquiry or service request, internally track your technical requirement, and contact you if additional information is needed regarding your request.' },
+          { heading: 'How do we protect your data?', text: 'Your data is stored temporarily in a private database with restricted access. We do not share, sell, or transfer your personal information to third parties under any circumstances. Data access is limited to authorized AUTOMACER personnel.' },
+          { heading: 'How long do we keep your data?', text: 'We retain your data for as long as necessary to manage your inquiry. Once the process is completed, data is deleted within a maximum of 12 months.' },
+          { heading: 'Your rights', text: 'In accordance with Argentine Personal Data Protection Law 25.326, you have the right to access your personal data in our possession, rectify any inaccurate or incomplete data, and request deletion of your data from our records. To exercise any of these rights, contact us at: servicios@automacer.com.ar' },
+        ],
+        terms_content: [
+          { heading: 'Contact form usage', text: 'By using the AUTOMACER contact form, you agree to the following conditions:' },
+          { heading: 'Proper use', text: 'The form is intended exclusively for legitimate inquiries related to the industrial services we offer.' },
+          { heading: 'Prohibited content', text: 'Sending messages containing unsolicited advertising or spam, offensive, defamatory, or discriminatory language, malicious content, suspicious links, or code injection attempts is prohibited.' },
+          { heading: 'Truthfulness of data', text: 'You agree to provide truthful and up-to-date information.' },
+          { heading: 'Submission limits', text: 'We reserve the right to limit the number of submissions per user to prevent form abuse.' },
+          { heading: 'No contractual obligation', text: 'Submitting a form does not constitute a contractual relationship. AUTOMACER will respond to inquiries based on availability and relevance.' },
+        ],
+      },
+    },
+    footer: {
+      tagline: 'A service company at your service',
+      links: ['Privacy Policy', 'Terms of Service', 'Maintenance Portal'],
+      copy: '© 2024 AUTOMACER INDUSTRIAL TECH SOLUTIONS. PRECISION ENGINEERED.',
+    },
+  },
+}

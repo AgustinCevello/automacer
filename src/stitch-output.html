@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AUTOMACER | Industrial Tech Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#adc8f5",
+                    "outline-variant": "#43474e",
+                    "secondary": "#a2e7ff",
+                    "surface-variant": "#2f3445",
+                    "on-secondary": "#003642",
+                    "on-primary": "#133155",
+                    "surface-container-low": "#161b2b",
+                    "error-container": "#93000a",
+                    "secondary-container": "#00d2fd",
+                    "surface-container-lowest": "#090e1c",
+                    "surface": "#0e1322",
+                    "on-tertiary-container": "#96a4b7",
+                    "surface-bright": "#343949",
+                    "on-tertiary-fixed-variant": "#3a4859",
+                    "surface-container-highest": "#2f3445",
+                    "tertiary-fixed": "#d6e4f9",
+                    "primary-fixed-dim": "#adc8f5",
+                    "tertiary": "#bac8dc",
+                    "on-tertiary-fixed": "#0f1c2c",
+                    "on-primary-container": "#8aa4cf",
+                    "on-primary-fixed-variant": "#2d486d",
+                    "surface-container-high": "#25293a",
+                    "on-error": "#690005",
+                    "on-primary-fixed": "#001c3b",
+                    "background": "#0e1322",
+                    "tertiary-fixed-dim": "#bac8dc",
+                    "primary-fixed": "#d5e3ff",
+                    "inverse-surface": "#dee1f7",
+                    "on-secondary-fixed": "#001f27",
+                    "primary-container": "#1e3a5f",
+                    "inverse-on-surface": "#2b3040",
+                    "secondary-fixed": "#b4ebff",
+                    "on-surface": "#dee1f7",
+                    "surface-container": "#1a1f2f",
+                    "surface-tint": "#adc8f5",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-fixed-variant": "#004e5f",
+                    "on-tertiary": "#243141",
+                    "inverse-primary": "#455f87",
+                    "on-background": "#dee1f7",
+                    "surface-dim": "#0e1322",
+                    "tertiary-container": "#2d3a4a",
+                    "on-secondary-container": "#005669",
+                    "error": "#ffb4ab",
+                    "on-surface-variant": "#c4c6cf",
+                    "outline": "#8e9199",
+                    "secondary-fixed-dim": "#3cd7ff",
+                    "cyan-brand": "#00D4FF"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "xl": "80px",
+                    "md": "24px",
+                    "lg": "48px",
+                    "container-max": "1280px",
+                    "sm": "12px",
+                    "xs": "4px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "h2": ["Syne"],
+                    "body-md": ["Inter"],
+                    "h3": ["Syne"],
+                    "body-lg": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "h1": ["Syne"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "h2": ["48px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h3": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "h1": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "300"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        .glow-cyan:hover {
+            box-shadow: 0 0 25px rgba(0, 212, 255, 0.5);
+        }
+        .text-glow {
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
+        }
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .bg-grid {
+            background-image: radial-gradient(rgba(0, 212, 255, 0.1) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+        .bg-dots {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0);
+            background-size: 20px 20px;
+        }
+        .section-glow-divider {
+            height: 1px;
+            width: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.3), transparent);
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+        }
+        .circuit-line {
+            position: absolute;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.15), transparent);
+            height: 1px;
+            width: 100%;
+        }
+        .circuit-vertical {
+            position: absolute;
+            background: linear-gradient(180deg, transparent, rgba(0, 212, 255, 0.15), transparent);
+            width: 1px;
+            height: 100%;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+      overflow-x: hidden;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-cyan-brand selection:text-surface">
+<!-- TopAppBar Navigation Shell -->
+<header class="fixed top-0 w-full z-50 bg-slate-950/70 backdrop-blur-2xl border-b border-white/10">
+<div class="flex justify-between items-center px-8 h-20 w-full max-w-[1280px] mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-cyan-brand text-2xl" data-icon="factory">factory</span>
+<span class="text-xl font-black text-white tracking-tighter font-h1">AUTOMACER</span>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-h2 text-sm uppercase tracking-widest font-bold text-cyan-brand border-b-2 border-cyan-brand pb-1" href="#">Inicio</a>
+<a class="font-h2 text-sm uppercase tracking-widest font-bold text-white/70 hover:text-white transition-all" href="#about">Nosotros</a>
+<a class="font-h2 text-sm uppercase tracking-widest font-bold text-white/70 hover:text-white transition-all" href="#services">Servicios</a>
+<a class="font-h2 text-sm uppercase tracking-widest font-bold text-white/70 hover:text-white transition-all" href="#gallery">Galería</a>
+<a class="font-h2 text-sm uppercase tracking-widest font-bold text-white/70 hover:text-white transition-all" href="#contact">Contacto</a>
+</nav>
+<button class="md:hidden text-white/70">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</header>
+<main class="relative">
+<!-- Hero Section -->
+<section class="relative min-h-[795px] flex flex-col items-center justify-center px-8 overflow-hidden pt-32 md:pt-56 pb-xl">
+<!-- Hero Orbs -->
+<div class="orb bg-cyan-brand w-[600px] h-[600px] -top-40 -left-40 opacity-10"></div>
+<div class="orb bg-primary-container w-[700px] h-[700px] top-1/2 -right-60 opacity-10"></div>
+<div class="absolute inset-0 bg-grid opacity-20 pointer-events-none"></div>
+<div class="max-w-[1280px] w-full text-center relative z-10">
+<span class="font-label-caps text-cyan-brand tracking-[0.3em] mb-4 block">INDUSTRIAL TECH SOLUTIONS</span>
+<h1 class="font-h1 text-h1 text-white mb-6 max-w-4xl mx-auto">
+            Energía que Transforma la <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-brand to-primary">Industria</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-2xl mx-auto">
+            Una empresa de servicios a su servicio. Proporcionamos ingeniería de precisión y mantenimiento avanzado para el sector industrial desde 1991.
+        </p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center">
+<a class="px-10 py-4 bg-cyan-brand text-on-secondary font-h2 text-sm font-bold uppercase tracking-widest rounded-lg hover:scale-105 transition-all glow-cyan flex items-center gap-2" href="#services">
+                Explorar Servicios
+                <span class="material-symbols-outlined text-sm" data-icon="rocket_launch">rocket_launch</span>
+</a>
+<a class="px-10 py-4 glass-panel text-white font-h2 text-sm font-bold uppercase tracking-widest rounded-lg hover:bg-white/10 transition-all border border-white/20" href="#contact">
+                Contáctanos
+            </a>
+</div>
+</div>
+<div class="mt-xl w-full max-w-5xl glass-panel rounded-2xl p-4 relative z-10">
+<img alt="Modern industrial facility" class="w-full h-[400px] object-cover rounded-xl grayscale hover:grayscale-0 transition-all duration-700 opacity-60 hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvQoe6Uhf1maYfaMsU5LVa9LTPvngguyo_rfCBb5jefsrKa2MrtIZIL1IGBdtzqovjjMq3q9TnXeUJVj-bFNLkNAlMcjVod8bw1U0NGfDoBNYQ9cBEuYFe-eF5GlCStWrOL0busZ04lC35ygGSsbF5Way73OjSp8ExGQJZwowT20KvWzszpVUoT-YomlVhG1_4htgaAUN9-WSlfsgnJke7K4dKsdE9vwc10eh9BH7-3qSf7QS6SnNULGyPnm-f8zq50ZVfuU4n4t4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent rounded-xl"></div>
+</div>
+</section>
+<div class="section-glow-divider"></div>
+<!-- About Us Section -->
+<section class="py-xl px-8 relative overflow-hidden" id="about">
+<!-- About Orbs -->
+<div class="orb bg-primary-container w-[800px] h-[800px] top-1/4 -right-40 opacity-[0.08]"></div>
+<div class="circuit-vertical left-1/4 top-0 h-1/2 opacity-20"></div>
+<div class="circuit-line top-1/3 left-0 opacity-10"></div>
+<div class="max-w-[1280px] mx-auto relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+<div>
+<span class="font-label-caps text-cyan-brand mb-4 block">SOBRE NOSOTROS</span>
+<h2 class="font-h2 text-h2 text-white mb-8">Innovación y Experiencia</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<div class="glass-panel p-6 rounded-xl border-l-4 border-l-cyan-brand">
+<div class="text-h3 font-h3 text-white mb-1">30+</div>
+<div class="font-label-caps text-on-surface-variant">Años</div>
+</div>
+<div class="glass-panel p-6 rounded-xl border-l-4 border-l-cyan-brand">
+<div class="text-h3 font-h3 text-white mb-1">100%</div>
+<div class="font-label-caps text-on-surface-variant">Compromiso</div>
+</div>
+<div class="glass-panel p-6 rounded-xl border-l-4 border-l-cyan-brand">
+<div class="text-h3 font-h3 text-white mb-1">24/7</div>
+<div class="font-label-caps text-on-surface-variant">Soporte</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-6">
+<div class="glass-panel p-8 rounded-2xl hover:bg-white/10 transition-colors">
+<div class="flex gap-4 mb-4">
+<span class="material-symbols-outlined text-cyan-brand" data-icon="precision_manufacturing">precision_manufacturing</span>
+<h3 class="font-h3 text-xl text-white">Nuestra Trayectoria</h3>
+</div>
+<p class="text-on-surface-variant leading-relaxed">
+                        Desde 1991, hemos liderado el mercado de servicios industriales, adaptándonos a las nuevas tecnologías y exigencias globales para ofrecer soluciones de vanguardia.
+                    </p>
+</div>
+<div class="glass-panel p-8 rounded-2xl hover:bg-white/10 transition-colors">
+<div class="flex gap-4 mb-4">
+<span class="material-symbols-outlined text-cyan-brand" data-icon="energy_savings_leaf">energy_savings_leaf</span>
+<h3 class="font-h3 text-xl text-white">Visión Sustentable</h3>
+</div>
+<p class="text-on-surface-variant leading-relaxed">
+                        Nos especializamos en la transición hacia energías limpias, enfocándonos en sistemas fotovoltaicos que optimizan el consumo industrial y reducen el impacto ambiental.
+                    </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="section-glow-divider"></div>
+<!-- Services Section -->
+<section class="py-xl px-8 relative overflow-hidden" id="services">
+<div class="absolute inset-0 bg-dots opacity-20 pointer-events-none"></div>
+<!-- Services Orbs -->
+<div class="orb bg-cyan-brand w-[500px] h-[500px] -bottom-20 -left-20 opacity-[0.07]"></div>
+<div class="orb bg-cyan-brand w-[600px] h-[600px] top-1/4 -right-20 opacity-[0.05]"></div>
+<div class="max-w-[1280px] mx-auto text-center mb-16 relative z-10">
+<span class="font-label-caps text-cyan-brand mb-4 block">PORTAFOLIO</span>
+<h2 class="font-h2 text-h2 text-white">Nuestros Servicios</h2>
+</div>
+<div class="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
+<!-- Service 1 -->
+<div class="glass-panel p-8 rounded-2xl hover:border-cyan-brand/60 hover:shadow-[0_0_30px_rgba(0,212,255,0.15)] transition-all group relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4">
+<span class="font-label-caps text-[10px] py-1 px-3 bg-primary-container text-cyan-brand rounded-full">CORE</span>
+</div>
+<span class="material-symbols-outlined text-4xl text-cyan-brand mb-6 block group-hover:scale-110 transition-transform" data-icon="construction">construction</span>
+<h4 class="font-h3 text-xl text-white mb-4">Instalación y Puesta en Marcha</h4>
+<p class="text-body-sm text-on-surface-variant">Implementación integral de sistemas industriales con protocolos de alta seguridad.</p>
+</div>
+<!-- Service 2 -->
+<div class="glass-panel p-8 rounded-2xl hover:border-cyan-brand/60 hover:shadow-[0_0_30px_rgba(0,212,255,0.15)] transition-all group">
+<span class="material-symbols-outlined text-4xl text-cyan-brand mb-6 block group-hover:rotate-45 transition-transform" data-icon="settings">settings</span>
+<h4 class="font-h3 text-xl text-white mb-4">Mantenimiento</h4>
+<p class="text-body-sm text-on-surface-variant">Planes preventivos y predictivos para asegurar la continuidad de su línea de producción.</p>
+</div>
+<!-- Service 3 -->
+<div class="glass-panel p-8 rounded-2xl hover:border-cyan-brand/60 hover:shadow-[0_0_30px_rgba(0,212,255,0.15)] transition-all group">
+<span class="material-symbols-outlined text-4xl text-cyan-brand mb-6 block group-hover:scale-110 transition-transform" data-icon="build">build</span>
+<h4 class="font-h3 text-xl text-white mb-4">Reparaciones</h4>
+<p class="text-body-sm text-on-surface-variant">Asistencia técnica especializada para resolución de fallas críticas en tiempo récord.</p>
+</div>
+<!-- Service 4 -->
+<div class="glass-panel p-8 rounded-2xl hover:border-cyan-brand/60 hover:shadow-[0_0_30px_rgba(0,212,255,0.15)] transition-all group relative">
+<div class="absolute top-0 right-0 p-4">
+<span class="font-label-caps text-[10px] py-1 px-3 bg-secondary-container text-on-secondary rounded-full">NUEVO</span>
+</div>
+<span class="material-symbols-outlined text-4xl text-cyan-brand mb-6 block group-hover:scale-110 transition-transform" data-icon="computer">computer</span>
+<h4 class="font-h3 text-xl text-white mb-4">Programación y Reparación de PLC</h4>
+<p class="text-body-sm text-on-surface-variant">Optimización de procesos automatizados y diagnóstico de controladores lógicos.</p>
+</div>
+<!-- Service 5 -->
+<div class="glass-panel p-8 rounded-2xl hover:border-cyan-brand/60 hover:shadow-[0_0_30px_rgba(0,212,255,0.15)] transition-all group relative">
+<div class="absolute top-0 right-0 p-4">
+<span class="font-label-caps text-[10px] py-1 px-3 bg-secondary-container text-on-secondary rounded-full">NUEVO</span>
+</div>
+<span class="material-symbols-outlined text-4xl text-cyan-brand mb-6 block group-hover:scale-110 transition-transform" data-icon="solar_power">solar_power</span>
+<h4 class="font-h3 text-xl text-white mb-4">Instalaciones Fotovoltaicas</h4>
+<p class="text-body-sm text-on-surface-variant">Soluciones energéticas sustentables diseñadas para el alto consumo industrial.</p>
+</div>
+<!-- Service Call to Action -->
+<div class="p-8 rounded-2xl border-2 border-dashed border-white/10 flex flex-col items-center justify-center text-center hover:bg-white/5 transition-colors">
+<p class="font-h3 text-lg text-white/50 mb-4">¿Necesita un servicio a medida?</p>
+<a class="text-cyan-brand font-bold flex items-center gap-2 hover:gap-4 transition-all" href="#contact">
+                Consultar ahora
+                <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<div class="section-glow-divider"></div>
+<!-- Gallery Section -->
+<section class="py-xl px-8 relative overflow-hidden" id="gallery">
+<div class="circuit-line top-1/4 right-0 w-1/2 opacity-20"></div>
+<div class="circuit-vertical right-1/4 bottom-0 h-1/3 opacity-20"></div>
+<div class="max-w-[1280px] mx-auto text-center mb-16 relative z-10">
+<span class="font-label-caps text-cyan-brand mb-4 block">EVIDENCIA</span>
+<h2 class="font-h2 text-h2 text-white">Nuestra Galería</h2>
+</div>
+<div class="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 relative z-10">
+<div class="md:col-span-2 md:row-span-2 glass-panel p-2 rounded-2xl overflow-hidden group">
+<img alt="Mechanical gears" class="w-full h-full object-cover rounded-xl grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_awlMRdp_bmqzsgsj2A4mbXjxyvYfYXu47LXZCwXex-yhgctxXH9CkH1c8x5pT1FTcbMtmVepEpmflQ03HsW-sNeXMWZwYB-XTXeVxt59JlHV6she4hQDf4t62efs9fU9grktN6S0EM03p0oHWnuB7uUiW-Ni8rn2y6wSH3gy6j74QPRQkBaEDeZgtvD_9WIj97LJ8geMi2dhLVLC7Fv25zqLUPaOALN7pEy7cnENqSlhWYixW9qefFpHykyagYrHzJdGGBX8GAM"/>
+</div>
+<div class="glass-panel p-2 rounded-2xl overflow-hidden group">
+<img alt="Technician working" class="w-full h-64 object-cover rounded-xl grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD91HEu6K9HkxSQ91pDcJXAA4UoN7Absl2tMwUQPn1YGoYedweUkhugPM4HT0zVBmHq3VDQkSjqR5VgvOHqOY8pmwoy0CGOnHXf3TlXcg9HkE7tyKi8fIeaBPlNIYDkV3YVzUdxv_YfZfXIeH7ER7g3MToxUkHUyxH9smHRll5BOsL45_Xzm8HMDYd5O-bJ_thHc4fTnfd8qw8HOmlWNV4kVwMllqROEmoPriH0HX1nGDiUmJVfHNJNLPfZR9QJUPD3icUDrVe5y6E"/>
+</div>
+<div class="glass-panel p-2 rounded-2xl overflow-hidden group">
+<img alt="Solar panels" class="w-full h-64 object-cover rounded-xl grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS__f5iHhsLcc-qOLjLFUAlhL1GUZNMuwOHNkiHYYheVWpf2a9ya5GmbwirY9pAdPumzfYm1lKrssdPnF_odsvIvycvcVOAH2Jh6Mb20v6IV3WikAPT2tZHB7lRUrzM1wzmyJ3qKC946UjfP0hEy_yrtH_BG1QHPjem5g9n8zrew7VpR1hvpngHpx-Fv4Klf3yvbgQXYbldk_bEtBmtrPluhU0omLSwJV2jrUg-BJ5ADv67dKKsDzL_mRTHg4CmXwUJNpaizYquw8"/>
+</div>
+<div class="md:col-span-2 glass-panel p-2 rounded-2xl overflow-hidden group">
+<img alt="Production line" class="w-full h-64 object-cover rounded-xl grayscale group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxcQ_u25H4WDwcHdVSnC3JVX6hIUbhacWidVVY9jhF-YFs2ov2DMtICqV17hE4JSuuxeQln383ZB351VT5PrMPrX167KZqgoP2P0r7dkx1eLiTqow4jXWD5HZ6aa_y_yA5hJGJbpuhPaTYQCEXzfp0LzQO7cUyWWeg4_FIbOzt6gm42ArnOcQKY9ISNByJ4gZOHM3DNXkH86-Zl8LQJT0OtX_MJyHqIrZxASY23BfDoNrK_URILxuLo2OP89L2DnsPUPilKQLCYLI"/>
+</div>
+</div>
+</section>
+<div class="section-glow-divider"></div>
+<!-- Contact Section -->
+<section class="py-xl px-8 relative overflow-hidden" id="contact">
+<div class="absolute inset-0 bg-grid opacity-[0.05] pointer-events-none"></div>
+<!-- Contact Orbs -->
+<div class="orb bg-primary-container w-[700px] h-[700px] bottom-0 right-0 opacity-[0.1]"></div>
+<div class="orb bg-cyan-brand w-[400px] h-[400px] top-1/2 left-0 opacity-[0.05]"></div>
+<div class="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-xl relative z-10">
+<div>
+<span class="font-label-caps text-cyan-brand mb-4 block">CONTACTO</span>
+<h2 class="font-h2 text-h2 text-white mb-8">Hablemos de Negocios</h2>
+<div class="space-y-8">
+<div class="flex items-start gap-6">
+<div class="w-12 h-12 bg-primary-container/30 rounded-lg flex items-center justify-center border border-white/10 glass-panel">
+<span class="material-symbols-outlined text-cyan-brand" data-icon="location_on">location_on</span>
+</div>
+<div>
+<h4 class="font-h3 text-lg text-white mb-1">Ubicación</h4>
+<p class="text-on-surface-variant">San Justo, Buenos Aires, Argentina</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<div class="w-12 h-12 bg-primary-container/30 rounded-lg flex items-center justify-center border border-white/10 glass-panel">
+<span class="material-symbols-outlined text-cyan-brand" data-icon="mail">mail</span>
+</div>
+<div>
+<h4 class="font-h3 text-lg text-white mb-1">Email</h4>
+<p class="text-on-surface-variant">servicios@automacer.com.ar</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<div class="w-12 h-12 bg-primary-container/30 rounded-lg flex items-center justify-center border border-white/10 glass-panel">
+<span class="material-symbols-outlined text-cyan-brand" data-icon="schedule">schedule</span>
+</div>
+<div>
+<h4 class="font-h3 text-lg text-white mb-1">Horarios</h4>
+<p class="text-on-surface-variant">Lunes a Viernes: 08:00 - 18:00</p>
+</div>
+</div>
+</div>
+</div>
+<div class="glass-panel p-10 rounded-3xl relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-cyan-brand/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<form class="space-y-6 relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-body-sm text-white/60 font-medium">Nombre</label>
+<input class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-cyan-brand focus:ring-0 transition-colors" placeholder="Su nombre" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-body-sm text-white/60 font-medium">Email</label>
+<input class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-cyan-brand focus:ring-0 transition-colors" placeholder="email@empresa.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-body-sm text-white/60 font-medium">Mensaje</label>
+<textarea class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:border-cyan-brand focus:ring-0 transition-colors" placeholder="Describa su requerimiento técnico..." rows="4"></textarea>
+</div>
+<button class="w-full py-4 bg-cyan-brand text-on-secondary font-h2 text-sm font-bold uppercase tracking-widest rounded-lg glow-cyan hover:scale-[1.02] transition-all" type="submit">
+                    Enviar Solicitud
+                </button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-[#050810] border-t border-white/5 py-12 px-8 relative overflow-hidden">
+<div class="absolute inset-0 bg-dots opacity-[0.03] pointer-events-none"></div>
+<div class="flex flex-col md:flex-row justify-between items-center max-w-[1280px] mx-auto gap-8 relative z-10">
+<div class="flex flex-col items-center md:items-start gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-cyan-brand text-lg" data-icon="factory">factory</span>
+<span class="text-lg font-bold text-white tracking-tighter">AUTOMACER</span>
+</div>
+<span class="text-xs uppercase tracking-tighter text-white/40 font-body-sm">Una empresa de servicios a su servicio</span>
+</div>
+<div class="flex gap-6">
+<a class="font-label-caps text-xs uppercase tracking-tighter text-white/40 hover:text-cyan-brand transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-caps text-xs uppercase tracking-tighter text-white/40 hover:text-cyan-brand transition-colors" href="#">Terms of Service</a>
+<a class="font-label-caps text-xs uppercase tracking-tighter text-white/40 hover:text-cyan-brand transition-colors" href="#">Maintenance Portal</a>
+</div>
+<p class="font-label-caps text-xs uppercase tracking-tighter text-white/40 text-center md:text-right">
+    © 2024 AUTOMACER INDUSTRIAL TECH SOLUTIONS. PRECISION ENGINEERED.
+</p>
+</div>
+</footer>
+</body></html>
