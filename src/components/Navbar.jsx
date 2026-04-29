@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { Languages, Sun, Moon, Menu, X } from 'lucide-react'
-import LogoBlanco from '../images/LogoAutomacerBlanco.svg'
-import LogoNegro from '../images/LogoAutomacerNegro.svg'
+import LogoBlanco from '../images/LogoAutomacerBlanco.webp'
+import LogoNegro from '../images/LogoAutomacerNegro.webp'
 
 
 export default function Navbar({ language, toggleLanguage, isDarkMode, toggleTheme, t }) {

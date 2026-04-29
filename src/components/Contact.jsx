@@ -6,6 +6,8 @@ import { z } from 'zod'
 import DOMPurify from 'dompurify'
 import LegalModal from './LegalModal'
 import { Send, CheckCircle2 } from 'lucide-react'
+import mailBlanco from '../images/mailBlanco.webp'
+import mailNegro from '../images/mailNegro.webp'
 
 // ─── Zod Schema ──────────────────────────────────────────────
 const contactSchema = z.object({
@@ -104,7 +106,16 @@ function LegalContent({ sections, isDarkMode }) {
           <h4 className={`font-[Syne] font-bold text-base mb-2 ${subHeadingColor}`}>
             {section.heading}
           </h4>
-          <p className="mb-4">{section.text}</p>
+          <p className="mb-4">
+            {section.text.split('servicios@automacer.com.ar').map((part, index, array) => (
+              <span key={index}>
+                {part}
+                {index < array.length - 1 && (
+                  <img src={isDarkMode ? mailBlanco : mailNegro} alt="Email" className="inline-block h-[14px] w-auto align-baseline ml-1" />
+                )}
+              </span>
+            ))}
+          </p>
         </div>
       ))}
     </>
@@ -242,9 +253,9 @@ export default function Contact({ t, isDarkMode }) {
   // ─── Style tokens ────────────────────────────────────────
   const headingColor = isDarkMode ? 'text-white' : 'text-slate-900'
   const inputClass = `w-full border rounded-lg px-4 py-3 focus:border-cyan-brand focus:ring-1 focus:ring-cyan-brand transition-colors outline-none
-    ${isDarkMode ? 'bg-white/5 border-white/10 text-white' : 'bg-white/60 border-slate-200 text-slate-900'}`
+    ${isDarkMode ? 'bg-white/5 border-white/10 text-white placeholder:text-white/40' : 'bg-white/60 border-slate-200 text-slate-900 placeholder:text-slate-400'}`
   const inputErrorClass = `w-full border rounded-lg px-4 py-3 focus:ring-1 transition-colors outline-none border-red-500 focus:border-red-500 focus:ring-red-500
-    ${isDarkMode ? 'bg-white/5 text-white' : 'bg-white/60 text-slate-900'}`
+    ${isDarkMode ? 'bg-white/5 text-white placeholder:text-white/40' : 'bg-white/60 text-slate-900 placeholder:text-slate-400'}`
   const labelClass = `text-sm font-[Inter] font-medium ${isDarkMode ? 'text-white/60' : 'text-slate-500'}`
   const errorTextClass = 'text-red-400 text-xs font-[Inter] mt-1 h-4'
   const linkClass = 'text-cyan-brand underline underline-offset-2 hover:text-cyan-400 transition-colors cursor-pointer'
@@ -277,7 +288,11 @@ export default function Contact({ t, isDarkMode }) {
                   </div>
                   <div>
                     <h4 className={`font-[Syne] text-lg font-medium mb-1 ${headingColor}`}>{info.title}</h4>
-                    <p className="text-on-surface-variant">{info.detail}</p>
+                    {info.detail === 'servicios@automacer.com.ar' ? (
+                      <img src={isDarkMode ? mailBlanco : mailNegro} alt="Email" className="h-5 w-auto mt-1" />
+                    ) : (
+                      <p className="text-on-surface-variant">{info.detail}</p>
+                    )}
                   </div>
                 </motion.div>
               ))}

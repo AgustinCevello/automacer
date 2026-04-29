@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import Foto1 from '../images/Foto1.svg'
-import Foto3 from '../images/Foto3.svg'
-import Foto4 from '../images/Foto4.svg'
-import Foto5 from '../images/Foto5.svg'
+import Foto1 from '../images/Foto1.webp'
+import Foto3 from '../images/Foto3.webp'
+import Foto4 from '../images/Foto4.webp'
+import Foto5 from '../images/Foto5.webp'
 
 const images = [
   { src: Foto1, span: true },

@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
 import { Icon } from '@iconify/react'
 import { useInView } from 'react-intersection-observer'
-import LogoBlanco from '../images/LogoAutomacerBlanco.svg'
-import LogoNegro from '../images/LogoAutomacerNegro.svg'
+import LogoBlanco from '../images/LogoAutomacerBlanco.webp'
+import LogoNegro from '../images/LogoAutomacerNegro.webp'
 
 
 export default function Footer({ t, isDarkMode }) {

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Icon } from '@iconify/react'
 import { useInView } from 'react-intersection-observer'
-import Foto6 from '../images/Foto6.svg'
+import Foto6 from '../images/Foto6.webp'
 
 
 export default function Hero({ t, isDarkMode }) {
