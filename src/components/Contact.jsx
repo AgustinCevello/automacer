@@ -1,4 +1,4 @@
-import { useState, useRef, useMemo, useCallback } from 'react'
+import { useState, useRef, useCallback, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Icon } from '@iconify/react'
 import { useInView } from 'react-intersection-observer'
@@ -8,6 +8,9 @@ import LegalModal from './LegalModal'
 import { Send, CheckCircle2 } from 'lucide-react'
 import mailBlanco from '../images/mailBlanco.webp'
 import mailNegro from '../images/mailNegro.webp'
+
+// ─── Constants ───────────────────────────────────────────────
+const HONEYPOT_NAME = `_hp_${Math.random().toString(36).substring(2)}`
 
 // ─── Zod Schema ──────────────────────────────────────────────
 const contactSchema = z.object({
@@ -139,14 +142,14 @@ export default function Contact({ t, isDarkMode }) {
   const [showTerms, setShowTerms] = useState(false)
 
   // Anti-bot: honeypot
-  const honeypotName = useMemo(
-    () => `_hp_${Math.random().toString(36).substring(2)}`,
-    []
-  )
   const honeypotRef = useRef(null)
 
   // Anti-bot: mount timestamp
-  const mountTimestamp = useRef(Date.now())
+  const mountTimestamp = useRef(0)
+
+  useEffect(() => {
+    mountTimestamp.current = Date.now()
+  }, [])
 
   // ─── onChange Handlers ────────────────────────────────────
   const handleNameChange = useCallback((e) => {
@@ -345,7 +348,7 @@ export default function Contact({ t, isDarkMode }) {
                   {/* ─── Honeypot (invisible to humans) ──────────── */}
                   <input
                     ref={honeypotRef}
-                    name={honeypotName}
+                    name={HONEYPOT_NAME}
                     type="text"
                     autoComplete="off"
                     tabIndex={-1}
