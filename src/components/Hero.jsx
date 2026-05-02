@@ -35,7 +35,7 @@ export default function Hero({ t, isDarkMode }) {
         </motion.h1>
 
         <motion.p initial={{ y: 40, opacity: 0 }} animate={inView ? { y: 0, opacity: 1 } : {}} transition={{ duration: 0.6, delay: 0.4 }}
-          className="font-[Inter] text-lg leading-relaxed text-on-surface-variant mb-12 max-w-2xl mx-auto">
+          className="font-[Inter] text-lg leading-relaxed text-on-surface-variant mb-12 max-w-2xl mx-auto whitespace-pre-line">
           {t.subtitle}
         </motion.p>
 

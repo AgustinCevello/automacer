@@ -66,7 +66,7 @@ export default function About({ t, isDarkMode }) {
                   <Icon icon={cardIcons[i]} className="text-cyan-brand text-3xl" />
                   <h3 className={`font-[Syne] text-xl font-medium ${headingColor}`}>{card.title}</h3>
                 </div>
-                <p className="text-on-surface-variant leading-relaxed">{card.description}</p>
+                <p className="text-on-surface-variant leading-relaxed whitespace-pre-line">{card.description}</p>
               </motion.div>
             ))}
           </motion.div>

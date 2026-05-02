@@ -1,15 +1,17 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import Foto7 from '../images/Foto7.webp'
 import Foto1 from '../images/Foto1.webp'
 import Foto3 from '../images/Foto3.webp'
 import Foto4 from '../images/Foto4.webp'
 import Foto5 from '../images/Foto5.webp'
 
 const images = [
-  { src: Foto1, span: true },
+  { src: Foto7, colSpan2: true },
+  { src: Foto1 },
   { src: Foto3 },
   { src: Foto4 },
-  { src: Foto5, colSpan2: true },
+  { src: Foto5 },
 ]
 
 export default function Gallery({ t, isDarkMode }) {
@@ -23,9 +25,11 @@ export default function Gallery({ t, isDarkMode }) {
 
       <motion.div initial={{ opacity: 0 }} animate={inView ? { opacity: 1 } : {}} transition={{ duration: 0.6 }}
         className="max-w-[1280px] mx-auto text-center mb-16 relative z-10">
-        <span className="font-[Inter] text-xs font-semibold text-cyan-brand tracking-[0.1em] uppercase mb-4 block">
-          {t.label}
-        </span>
+        {t.label && (
+          <span className="font-[Inter] text-xs font-semibold text-cyan-brand tracking-[0.1em] uppercase mb-4 block">
+            {t.label}
+          </span>
+        )}
         <h2 className={`font-[Syne] text-[clamp(32px,5vw,48px)] leading-[1.2] font-bold ${headingColor}`}>
           {t.title}
         </h2>
@@ -34,12 +38,12 @@ export default function Gallery({ t, isDarkMode }) {
       <motion.div
         variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.12 } } }}
         initial="hidden" animate={inView ? 'visible' : 'hidden'}
-        className="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 relative z-10">
+        className="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 relative z-10">
         {images.map((img, i) => (
           <motion.div key={i}
             variants={{ hidden: { opacity: 0, scale: 0.95 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } } }}
             className={`glass-panel p-2 rounded-2xl overflow-hidden group ${img.span ? 'md:col-span-2 md:row-span-2' : ''} ${img.colSpan2 ? 'md:col-span-2' : ''}`}>
-            <img src={img.src} alt={t.alts[i]}
+            <img src={img.src} alt={t.alts[i] || 'Imagen de la galería'}
               className={`w-full object-cover rounded-xl grayscale group-hover:grayscale-0 transition-all duration-500 ${img.span ? 'h-full scale-100 group-hover:scale-105' : 'h-64'}`} />
           </motion.div>
         ))}
