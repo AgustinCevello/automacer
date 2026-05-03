@@ -24,6 +24,6 @@
 - **Scroll Suave y Tracking:** Scroll-padding para acomodar el Navbar fijo y "scrollspy" nativo mediante `IntersectionObserver` que actualiza el estado activo del menú de navegación.
 
 ## Información de Contacto
-- **Ubicación:** San Justo, Buenos Aires, Argentina
+- **Ubicación:** Ramos Mejía, Buenos Aires, Argentina
 - **Email:** servicios@automacer.com.ar
 - **Horarios:** Lunes a Viernes de 08:00 a 18:00 hs.
