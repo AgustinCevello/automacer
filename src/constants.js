@@ -55,7 +55,7 @@ export const TRANSLATIONS = {
       label: 'CONTACTO',
       title: 'Hablemos de Negocios',
       info: [
-        { title: 'Ubicación', detail: 'Ramos Mejía, Buenos Aires, Argentina' },
+        { title: 'Ubicación', detail: 'Buenos Aires, Argentina' },
         { title: 'Email', detail: 'servicios@automacer.com.ar' },
         { title: 'Horarios', detail: 'Lunes a Viernes: 08:00 - 18:00' },
       ],
@@ -75,7 +75,7 @@ export const TRANSLATIONS = {
         privacy_title: 'Política de Privacidad',
         terms_title: 'Términos y Condiciones',
         privacy_content: [
-          { heading: 'Responsable del Tratamiento', text: 'AUTOMACER Industrial Tech Solutions, con domicilio en Ramos Mejía, Buenos Aires, Argentina.' },
+          { heading: 'Responsable del Tratamiento', text: 'AUTOMACER Industrial Tech Solutions, con domicilio en Buenos Aires, Argentina.' },
           { heading: '¿Qué datos recopilamos?', text: 'A través de nuestro formulario de contacto, recopilamos los siguientes datos personales que usted nos proporciona voluntariamente: nombre completo, dirección de correo electrónico y mensaje con la descripción de su requerimiento técnico. No recopilamos datos sensibles, financieros ni información de menores de edad.' },
           { heading: '¿Para qué utilizamos sus datos?', text: 'Sus datos personales se utilizan exclusivamente para responder a su consulta o solicitud de servicio, realizar el seguimiento interno de su requerimiento técnico y contactarlo en caso de necesitar información adicional sobre su solicitud.' },
           { heading: '¿Cómo protegemos sus datos?', text: 'Sus datos se almacenan de forma temporal en una base de datos privada con acceso restringido. No compartimos, vendemos ni cedemos su información personal a terceros bajo ninguna circunstancia. El acceso a los datos está limitado al personal autorizado de AUTOMACER.' },
@@ -155,7 +155,7 @@ export const TRANSLATIONS = {
       label: 'CONTACT',
       title: "Let's Talk Business",
       info: [
-        { title: 'Location', detail: 'Ramos Mejía, Buenos Aires, Argentina' },
+        { title: 'Location', detail: 'Buenos Aires, Argentina' },
         { title: 'Email', detail: 'servicios@automacer.com.ar' },
         { title: 'Hours', detail: 'Monday to Friday: 08:00 - 18:00' },
       ],
@@ -175,7 +175,7 @@ export const TRANSLATIONS = {
         privacy_title: 'Privacy Policy',
         terms_title: 'Terms & Conditions',
         privacy_content: [
-          { heading: 'Data Controller', text: 'AUTOMACER Industrial Tech Solutions, located in Ramos Mejía, Buenos Aires, Argentina.' },
+          { heading: 'Data Controller', text: 'AUTOMACER Industrial Tech Solutions, located in Buenos Aires, Argentina.' },
           { heading: 'What data do we collect?', text: 'Through our contact form, we collect the following personal data that you voluntarily provide: full name, email address, and message describing your technical requirement. We do not collect sensitive, financial, or minors\' data.' },
           { heading: 'How do we use your data?', text: 'Your personal data is used exclusively to respond to your inquiry or service request, internally track your technical requirement, and contact you if additional information is needed regarding your request.' },
           { heading: 'How do we protect your data?', text: 'Your data is stored temporarily in a private database with restricted access. We do not share, sell, or transfer your personal information to third parties under any circumstances. Data access is limited to authorized AUTOMACER personnel.' },

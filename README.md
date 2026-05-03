@@ -85,7 +85,7 @@ Si deseas correr el proyecto en tu entorno local, sigue estos pasos:
 ## 📍 Contacto
 
 Estamos ubicados en el corazón de la industria:
-- 🏭 **Sede:** Ramos Mejía, Buenos Aires, Argentina
+- 🏭 **Sede:** Buenos Aires, Argentina
 - ✉️ **Email:** servicios@automacer.com.ar
 - 🕒 **Atención:** Lunes a Viernes de 08:00 a 18:00 hs.
 
