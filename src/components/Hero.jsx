@@ -26,7 +26,7 @@ export default function Hero({ t, isDarkMode }) {
         </motion.span>
 
         <motion.h1 initial={{ y: 40, opacity: 0 }} animate={inView ? { y: 0, opacity: 1 } : {}} transition={{ duration: 0.6, delay: 0.2 }}
-          className="font-[Syne] text-[clamp(36px,6vw,64px)] leading-[1.1] tracking-[-0.02em] font-extrabold mb-6 max-w-4xl mx-auto"
+          className="font-[Montserrat] text-[clamp(36px,6vw,64px)] leading-[1.1] tracking-[-0.02em] font-extrabold mb-6 max-w-4xl mx-auto"
           style={{ color: isDarkMode ? '#ffffff' : '#0d1b3e' }}>
           {t.h1_1}{' '}
           <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-brand to-primary">
@@ -44,7 +44,6 @@ export default function Hero({ t, isDarkMode }) {
           <a href="#services"
             className="px-10 py-4 bg-cyan-brand text-on-secondary font-[Syne] text-sm font-bold uppercase tracking-widest rounded-lg hover:scale-105 transition-all glow-cyan flex items-center justify-center gap-2">
             {t.cta_primary}
-            <Icon icon="material-symbols:rocket-launch" className="text-xl" />
           </a>
           <a href="#contact"
             className={`px-10 py-4 font-[Syne] text-sm font-bold uppercase tracking-widest rounded-lg transition-all ${secondaryBtnClass}`}>
@@ -56,7 +55,7 @@ export default function Hero({ t, isDarkMode }) {
       <motion.div initial={{ scale: 0.97, opacity: 0 }} animate={inView ? { scale: 1, opacity: 1 } : {}} transition={{ duration: 0.8, delay: 0.5 }}
         className="mt-20 w-full max-w-5xl glass-panel rounded-2xl p-4 relative z-10">
         <img alt="Modern industrial facility"
-          className="w-full h-[400px] object-cover rounded-xl grayscale hover:grayscale-0 transition-all duration-700 opacity-60 hover:opacity-100"
+          className="w-full h-[400px] object-cover rounded-xl md:grayscale hover:grayscale-0 transition-all duration-700 opacity-60 hover:opacity-100"
           src={Foto6} />
         <div className="absolute inset-0 bg-gradient-to-t from-surface to-transparent rounded-xl" />
       </motion.div>

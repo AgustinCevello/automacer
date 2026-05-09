@@ -44,7 +44,7 @@ export default function Gallery({ t, isDarkMode }) {
             variants={{ hidden: { opacity: 0, scale: 0.95 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } } }}
             className={`glass-panel p-2 rounded-2xl overflow-hidden group ${img.span ? 'md:col-span-2 md:row-span-2' : ''} ${img.colSpan2 ? 'md:col-span-2' : ''}`}>
             <img src={img.src} alt={t.alts[i] || 'Imagen de la galería'}
-              className={`w-full object-cover rounded-xl grayscale group-hover:grayscale-0 transition-all duration-500 ${img.span ? 'h-full scale-100 group-hover:scale-105' : 'h-64'}`} />
+              className={`w-full object-cover rounded-xl md:grayscale group-hover:grayscale-0 transition-all duration-500 ${img.span ? 'h-full scale-100 group-hover:scale-105' : 'h-64'}`} />
           </motion.div>
         ))}
       </motion.div>

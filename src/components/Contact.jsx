@@ -285,7 +285,7 @@ export default function Contact({ t, isDarkMode }) {
               {t.info.map((info, i) => (
                 <motion.div key={info.title}
                   variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
-                  className="flex items-start gap-6">
+                  className="flex items-center gap-6">
                   <div className="w-12 h-12 bg-primary-container/30 rounded-lg flex items-center justify-center border border-white/10 glass-panel">
                     <Icon icon={contactIcons[i]} className="text-cyan-brand text-2xl" />
                   </div>

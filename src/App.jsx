@@ -6,6 +6,7 @@ import Services from './components/Services'
 import Gallery from './components/Gallery'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
 import { TRANSLATIONS } from './constants'
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
         <Contact t={t.contact} isDarkMode={isDarkMode} />
       </main>
       <Footer t={t.footer} isDarkMode={isDarkMode} />
+      <ScrollToTop isDarkMode={isDarkMode} />
     </>
   )
 }
